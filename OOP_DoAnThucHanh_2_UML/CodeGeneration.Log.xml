@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 14.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2017-11-25T08:25:38" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2017-11-25T08:25:38" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2017-11-25T08:25:38" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2017-11-25T08:25:38" Importance="Diagnostic" Text="ProjectPath = ..\OOP_DoAnThucHanh_2_UMLLib\OOP_DoAnThucHanh_2_UMLLib.csproj" />
+  <Message Timestamp="2017-11-25T08:25:38" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2017-11-25T08:25:38" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2017-11-25T08:25:38" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2017-11-25T08:25:38" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2017-11-25T08:25:38" Importance="Medium" Text="OOP_DoAnThucHanh_2_UML's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'OOP_DoAnThucHanh_2_UML::Program' -  (Class), 'OOP_DoAnThucHanh_2_UML::Vehicle' -  (Class), 'OOP_DoAnThucHanh_2_UML::GPS' -  (Class), 'OOP_DoAnThucHanh_2_UML::TeamVehicles' -  (Class), 'OOP_DoAnThucHanh_2_UML::CRand' -  (Class), 'OOP_DoAnThucHanh_2_UML::Motobike' -  (Class), 'OOP_DoAnThucHanh_2_UML::Car' -  (Class), 'OOP_DoAnThucHanh_2_UML::Truck' -  (Class) " />
+  <Message Timestamp="2017-11-25T08:25:39" Importance="Medium" Text="Project Added: e:\Visual Studio 2015\Projects\OOP_DoAnThucHanh_2\OOP_DoAnThucHanh_2_UMLLib\OOP_DoAnThucHanh_2_UMLLib.csproj" />
+  <Message Timestamp="2017-11-25T08:25:39" Importance="Medium" Text="'OOP_DoAnThucHanh_2_UML::Program' -  (Class) : success (file created) - e:\Visual Studio 2015\Projects\OOP_DoAnThucHanh_2\OOP_DoAnThucHanh_2_UMLLib\GeneratedCode\Program.cs" />
+  <Message Timestamp="2017-11-25T08:25:40" Importance="Medium" Text="'OOP_DoAnThucHanh_2_UML::Vehicle' -  (Class) : success (file created) - e:\Visual Studio 2015\Projects\OOP_DoAnThucHanh_2\OOP_DoAnThucHanh_2_UMLLib\GeneratedCode\Vehicle.cs" />
+  <Message Timestamp="2017-11-25T08:25:40" Importance="Medium" Text="'OOP_DoAnThucHanh_2_UML::GPS' -  (Class) : success (file created) - e:\Visual Studio 2015\Projects\OOP_DoAnThucHanh_2\OOP_DoAnThucHanh_2_UMLLib\GeneratedCode\GPS.cs" />
+  <Message Timestamp="2017-11-25T08:25:40" Importance="Medium" Text="'OOP_DoAnThucHanh_2_UML::TeamVehicles' -  (Class) : success (file created) - e:\Visual Studio 2015\Projects\OOP_DoAnThucHanh_2\OOP_DoAnThucHanh_2_UMLLib\GeneratedCode\TeamVehicles.cs" />
+  <Message Timestamp="2017-11-25T08:25:42" Importance="Medium" Text="'OOP_DoAnThucHanh_2_UML::CRand' -  (Class) : success (file created) - e:\Visual Studio 2015\Projects\OOP_DoAnThucHanh_2\OOP_DoAnThucHanh_2_UMLLib\GeneratedCode\CRand.cs" />
+  <Message Timestamp="2017-11-25T08:25:43" Importance="Medium" Text="'OOP_DoAnThucHanh_2_UML::Motobike' -  (Class) : success (file created) - e:\Visual Studio 2015\Projects\OOP_DoAnThucHanh_2\OOP_DoAnThucHanh_2_UMLLib\GeneratedCode\Motobike.cs" />
+  <Message Timestamp="2017-11-25T08:25:43" Importance="High" Text="Code generation process has been canceled." />
+  <Message Timestamp="2017-11-25T08:25:43" Importance="Diagnostic" Text="The selection included 5 elements which were not bound to a template." />
+  <Message Timestamp="2017-11-25T08:25:43" Importance="Diagnostic" Text="'aad05f66-8d5c-49a7-a4ce-9ec9af84e887' -  (Generalization): no bound template." />
+  <Message Timestamp="2017-11-25T08:25:43" Importance="Diagnostic" Text="'885a7fd6-349a-483f-a793-092ec38e8de4' -  (Generalization): no bound template." />
+  <Message Timestamp="2017-11-25T08:25:43" Importance="Diagnostic" Text="'4aa49780-7aaa-4ced-a297-715550f73a4d' -  (Generalization): no bound template." />
+  <Warning Timestamp="2017-11-25T08:25:43" Importance="Medium" Text="'OOP_DoAnThucHanh_2_UML::Car' -  (Class): no bound template." />
+  <Warning Timestamp="2017-11-25T08:25:43" Importance="Medium" Text="'OOP_DoAnThucHanh_2_UML::Truck' -  (Class): no bound template." />
+  <Message Timestamp="2017-11-25T08:25:43" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 2." />
+</Log>
