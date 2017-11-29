@@ -153,6 +153,7 @@
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="1612231_1612239.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Fleet.cpp" />
     <ClCompile Include="GoGo.cpp" />

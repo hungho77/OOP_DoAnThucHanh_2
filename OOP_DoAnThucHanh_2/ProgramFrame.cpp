@@ -4,7 +4,7 @@
 
 void ProgramFrame::StartMessage(ostream & os)
 {
-	os << "Welcome, entering data: ";
+	os << "Welcome" << endl;
 }
 
 void ProgramFrame::ErrorMessage(ostream & os)
@@ -38,7 +38,7 @@ void ProgramFrame::Run(istream & is, ostream & os)
 		}
 		Processing();
 		Output(os);
-		ToContinue = AskToComtinue(is, os);
+		ToContinue = AskToComtinue(cin, os);
 	} while (ToContinue);
 }
 

@@ -1,0 +1,21 @@
+4
+1
+50K3-1123
+Nguyen Van A
+Honda RSX 2008
+0
+2
+37J3-2893
+Tran Van B
+Toyota
+7
+3
+37KE-2189
+Nguyen Van C
+Hyundai
+1500
+1
+50K3-1133
+Nguyen Van B
+Honda RSX 2008
+0

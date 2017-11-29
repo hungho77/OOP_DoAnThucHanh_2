@@ -2,10 +2,34 @@
 
 
 
+double Vehicle::calcKm(double Km1, double Km2)
+{
+	double Km = Km1 - Km2;
+	if (Km < 0)
+		return 0;
+	return Km;
+}
+
 Vehicle::Vehicle()
 {
 	this->m_GPS.randInit();
 	this->m_TypeOfVehicle = 0;
+	this->m_stt = leisured;
+}
+
+void Vehicle::setGPS(const GPS & x)
+{
+	this->m_GPS = x;
+}
+
+GPS Vehicle::getGPS()
+{
+	return this->m_GPS;
+}
+
+GPS Vehicle::getGPS() const
+{
+	return this->m_GPS;
 }
 
 
@@ -18,6 +42,12 @@ double Vehicle::getSpeed() const
 {
 	return CRand::generateRandnNumab(20,50);
 }
+
+void Vehicle::setSTT(status x)
+{
+	this->m_stt = x;
+}
+
 
 status Vehicle::getSTT()
 {
@@ -34,7 +64,7 @@ string Vehicle::getBrand()
 	return this->m_strBrand;
 }
 
-string Vehicle::gteBrand() const
+string Vehicle::getBrand() const
 {
 	return this->m_strBrand;
 }
@@ -69,11 +99,39 @@ int Vehicle::getTypeOfVehicle() const
 	return this->m_TypeOfVehicle;
 }
 
+int Vehicle::get_nSeat()
+{
+	return 0;
+}
+
+int Vehicle::get_nSeat() const
+{
+	return 0;
+}
+
+int Vehicle::get_nLoad()
+{
+	return 0;
+}
+
+int Vehicle::get_nLoad() const
+{
+	return 0;
+}
+
 void Vehicle::input(string strNumberPlate, string strDriveName, string strBrand, int info)
 {
 	this->m_strNumberPlate = strNumberPlate;
 	this->m_strDriveName = strDriveName;
 	this->m_strBrand = strBrand;
+
+}
+
+void Vehicle::output(ostream & os)
+{
+	os << this->m_strNumberPlate << endl;
+	os << this->m_strDriveName << endl;
+	os << this->m_strBrand << endl;
 }
 
 

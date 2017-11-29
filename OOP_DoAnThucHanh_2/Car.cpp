@@ -8,9 +8,27 @@ Car::Car()
 	this->m_nSeat = 0;
 }
 
+double Car::calcFare(double distance, double time)
+{
+	double fare = this->m_dPricePerKm*distance + this->m_dTimePrice*time;
+	if (fare < this->m_dMinPrice)
+		return this->m_dMinPrice;
+	return fare;
+}
+
+int Car::get_nSeat()
+{
+	return this->m_nSeat;
+}
+
+int Car::get_nSeat() const
+{
+	return this->m_nSeat;
+}
+
 void Car::input(string strNumberPlate, string strDriveName, string strBrand, int info)
 {
-	this->input(strNumberPlate, strDriveName, strBrand, info);
+	Vehicle::input(strNumberPlate, strDriveName, strBrand, info);
 	this->m_nSeat = info;
 	switch(this->m_nSeat)
 	{
@@ -32,6 +50,13 @@ void Car::input(string strNumberPlate, string strDriveName, string strBrand, int
 	default:
 		break;
 	}
+}
+
+void Car::output(ostream & os)
+{
+	os << "Car" << endl;
+	Vehicle::output(os);
+	os << this->m_nSeat << endl;
 }
 
 

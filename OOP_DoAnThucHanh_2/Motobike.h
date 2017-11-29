@@ -10,7 +10,9 @@ class Motobike
 	double m_dOver2kmPrice;
 public:
 	Motobike();
+	virtual double calcFare(double distance, double time = 0);
 	virtual void input(string strNumberPlate, string strDriveName, string strBrand, int info);
+	virtual void output(ostream &os);
 	virtual ~Motobike();
 };
 

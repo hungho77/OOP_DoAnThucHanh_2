@@ -71,5 +71,8 @@
     <ClCompile Include="GoGo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="1612231_1612239.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
