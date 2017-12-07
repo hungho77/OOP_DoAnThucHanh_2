@@ -1,4 +1,4 @@
-4
+7
 1
 50K3-1123
 Nguyen Van A
@@ -28,9 +28,9 @@ Honda RSX 2009
 37J3-2893
 Tran Van F
 Toyota
-7
+4
 3
 37KE-2189
 Nguyen Van Ho
 Hyundai
-1500
+750

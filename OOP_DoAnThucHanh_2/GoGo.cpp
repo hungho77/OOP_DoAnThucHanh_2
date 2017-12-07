@@ -63,9 +63,11 @@ void GoGo::Input(istream & is)
 	case motobike:
 		break;
 	case car:
+		cout << "Enter number seats: ";
 		is >> m_nSeat;
 		break;
 	case trunk:
+		cout << "Enter vehicle load: ";
 		is >> m_nLoad;
 		break;
 	default:
@@ -109,11 +111,11 @@ void GoGo::Processing()
 	double minDistance = double(INT_MAX);
 	for (int i = 0; i < index.size(); i++)
 	{
-		double distance = m_Start.calcDistance(this->m_pFlt.getElement(this->m_nTof - 1, i)->getGPS());
+		double distance = m_Start.calcDistance(this->m_pFlt.getElement(this->m_nTof - 1, index[i])->getGPS());
 		if (minDistance > distance)
 		{
 			minDistance = distance;
-			minDistanceIndex = i;
+			minDistanceIndex = index[i];
 		}
 	}
 
@@ -155,7 +157,7 @@ bool GoGo::AskToComtinue(istream & is, ostream & os)
 		this->m_count = 0;
 	}
 	char ch;
-	os << "Press 'Y' to continue, other key to stop...";
+	os << "Press 'Y' to continue, other key to stop..." << endl;
 	is >> ch;
 	return (ch == 'Y' || ch == 'y');
 
@@ -164,10 +166,10 @@ bool GoGo::AskToComtinue(istream & is, ostream & os)
 void GoGo::printTime(ostream &os)
 {
 	this->m_time *= 60;
-	this->m_time = roundf(this->m_time * 1);
+	this->m_time = this->m_time;
 	int hour = this->m_time / 3600;
-	int minute = roundf((this->m_time / 60 - hour * 60) * 1);
-	int second = roundf((this->m_time - hour * 3600 - minute * 60) * 1);
+	int minute = (this->m_time - hour * 3600) / 60;
+	int second = this->m_time - hour * 3600 - minute * 60;
 	os << hour << "h" << minute << "m" << second << "s" << endl;
 }
 

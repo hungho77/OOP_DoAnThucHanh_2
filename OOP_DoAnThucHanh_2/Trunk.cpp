@@ -59,7 +59,7 @@ void Trunk::output(ostream & os)
 		os << this->m_nVehicleLoad << "kg" << endl;
 	else
 	{
-		os << this->m_nVehicleLoad << "ton" << endl;
+		os << this->m_nVehicleLoad / 1000.0 << "ton" << endl;
 	}
 }
 
