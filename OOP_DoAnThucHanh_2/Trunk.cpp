@@ -55,7 +55,12 @@ void Trunk::output(ostream & os)
 {
 	os << "Trunk" << endl;
 	Vehicle::output(os);
-	os << this->m_nVehicleLoad << endl;
+	if (this->m_nVehicleLoad == 750)
+		os << this->m_nVehicleLoad << "kg" << endl;
+	else
+	{
+		os << this->m_nVehicleLoad << "ton" << endl;
+	}
 }
 
 

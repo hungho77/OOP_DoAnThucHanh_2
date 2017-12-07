@@ -5,7 +5,7 @@ using namespace std;
 class ProgramFrame
 {
 protected:
-	virtual void StartMessage(ostream &os);
+	virtual void StartMessage(ostream &os);	
 	virtual void Input(istream &is) = 0;
 	virtual bool ValidData() = 0;
 	virtual void ErrorMessage(ostream &os);
@@ -15,6 +15,7 @@ protected:
 public:
 	ProgramFrame();
 	void Run(istream &is, ostream &os);
+	virtual void InputFile(istream &is) = 0;
 	~ProgramFrame();
 };
 

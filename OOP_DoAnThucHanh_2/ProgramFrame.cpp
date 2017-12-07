@@ -42,7 +42,6 @@ void ProgramFrame::Run(istream & is, ostream & os)
 	} while (ToContinue);
 }
 
-
 ProgramFrame::~ProgramFrame()
 {
 }

@@ -29,15 +29,17 @@ class GoGo:
 	queue<UpdateInfo> m_update;
 	//biến đếm số lượt gọi xe
 	int m_count;
+	virtual void StartMessage(ostream &os);
 	void Input(istream &is);
 	bool ValidData();
 	void Output(ostream &os);
 	void Processing();
 	void update();
 	virtual bool AskToComtinue(istream &is, ostream &os);
+	void printTime(ostream &os);
 public:
 	GoGo();
-	void InputFile(istream &is);
+	virtual void InputFile(istream &is);
 	~GoGo();
 };
 
