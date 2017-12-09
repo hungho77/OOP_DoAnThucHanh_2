@@ -1,5 +1,5 @@
 #include "Vehicle.h"
-
+#include<iomanip>
 
 
 double Vehicle::calcKm(double Km1, double Km2)
@@ -129,9 +129,9 @@ void Vehicle::input(string strNumberPlate, string strDriveName, string strBrand,
 
 void Vehicle::output(ostream & os)
 {
-	os << this->m_strNumberPlate << endl;
-	os << this->m_strDriveName << endl;
-	os << this->m_strBrand << endl;
+	os << setw(20) << "" << right << setw(52) << left << "Number plate: " << this->m_strNumberPlate << endl;
+	os << setw(20) << "" << right << setw(52) << left << "Driver Name: " << this->m_strDriveName << endl;
+	os << setw(20) << "" << right  << setw(52) << left << "Brand: " << this->m_strBrand << endl;
 }
 
 

@@ -1,6 +1,10 @@
 ﻿#include "GoGo.h"
 #include<cmath>
 #include<iomanip>
+#include<conio.h>
+#include <io.h> // <- need to add this include for _setmode
+#include <fcntl.h> // <- need to add this include for _O_TEXT
+#include <cstdio> // <- need to add this include for wprintf
 using namespace std;
 
 int GoGo::chooseSeat()
@@ -47,16 +51,17 @@ void GoGo::InputFile(istream & is)
 
 void GoGo::StartMessage(ostream & os)
 {
-	os << "Welcome to GoGO booking!" << endl;
+	system("cls");
+	os << setw(48) << "" << "Welcome to GoGO booking!" << endl << endl;
 }
 
 void GoGo::Input(istream & is)
 {
-	cout << "Enter star position: ";
+	cout << setw(20) << "" << right << setw(52) << left << "Enter star position (x, y) : ";
 	is >> this->m_Start;
-	cout << "Enter finish position: ";
+	cout << setw(20) << "" << right << setw(52) << left << "Enter finish position (x, y) : ";
 	is >> this->m_Finish;
-	cout << "Enter type of vehicle (1.motobike/2.car/3.trunk): ";
+	cout << setw(20) << "" << right << setw(52) << left << "Enter type of vehicle (1.motobike/2.car/3.trunk) : ";
 	is >> this->m_nTof;
 	this->m_nSeat = 0;
 	this->m_nLoad = 0;
@@ -65,11 +70,11 @@ void GoGo::Input(istream & is)
 	case motobike:
 		break;
 	case car:
-		cout << "Enter number seats: ";
+		cout << setw(20) << "" << right << setw(52) << left << "Enter number seats: ";
 		is >> m_nSeat;
 		break;
 	case trunk:
-		cout << "Enter vehicle load: ";
+		cout << setw(20) << "" << right << setw(52) << left << "Enter vehicle load: ";
 		is >> m_nLoad;
 		break;
 	default:
@@ -81,22 +86,32 @@ bool GoGo::ValidData()
 {
 	if (this->m_nTof > 3 || this->m_nTof < 1 || m_pFlt.isEmpty())
 		return false;
+	if (   this->m_Start.getX() < -20  || this->m_Start.getX() > 20
+		|| this->m_Start.getY() < -20  || this->m_Start.getY() > 20
+		|| this->m_Finish.getX() < -20 || this->m_Finish.getX() > 20
+		|| this->m_Finish.getY() < -20 || this->m_Finish.getY() > 20)
+		return false;
 	return true;
 }
 
 void GoGo::Output(ostream & os)
 {
+
+	os << setw(20) << " " << setfill('-') << setw(66) << "-" << endl;
+	os << setfill(' ');
+	os << setw(42) << "" << "Information of your vehicle booked" << endl;
 	if (this->m_index == -1)
-		os << "Booking process failed!" << endl;
+		os << setw(20) << "" << right << setw(52) << left << "Booking process failed!" << endl;
 	else
 	{
 		this->m_pFlt.getElement(this->m_nTof - 1, this->m_index)->output(os);
-		os << "Time left: ";
+		os << setw(20) << "" << right << setw(52) << left << "Time left: ";
 		this->printTime(os);
-		os << "Fare: ";
+		os << setw(20) << "" << right << setw(52) << left << "Fare: ";
 		os << fixed << setprecision(2) << roundf(this->m_dFare * 100) / 100 << " VND" << endl;
 	}
-	os << "Thank you customers!" << endl;
+	cout << endl;
+	os << setw(50) << "" << "Thank you customers!" << endl;
 }
 
 void GoGo::Processing()
@@ -160,10 +175,9 @@ bool GoGo::AskToComtinue(istream & is, ostream & os)
 		this->m_count = 0;
 	}
 	char ch;
-	os << "Press 'Y' to continue, other key to stop..." << endl;
-	is >> ch;
+	os << endl << setw(38) << "" << "Press 'Y' to continue, other key to stop...";
+	ch = getch();
 	return (ch == 'Y' || ch == 'y');
-
 }
 
 void GoGo::printTime(ostream &os)
@@ -175,6 +189,31 @@ void GoGo::printTime(ostream &os)
 	int second = this->m_time - hour * 3600 - minute * 60;
 	os << hour << "h" << minute << "m" << second << "s" << endl;
 }
+
+
+void GoGo::display(ostream & os)
+{
+	cout << endl << endl << endl << endl << endl << endl << endl;
+	_setmode(_fileno(stdout), 0x20000); // <- set the output mode to UTF-16
+	wprintf(  // <- use wprintf to output UTF16 characters.
+			  // note how the strings start with an 'L' prefix now
+
+		L"                                   ▄▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄ \n"
+		L"                                  ▐░░░░░░░░░░░▌ ▐░░░░░░░░░░░▌ ▐░░░░░░░░░░░▌ ▐░░░░░░░░░░░▌\n"
+		L"                                  ▐░█▀▀▀▀▀▀▀▀▀  ▐░█▀▀▀▀▀▀▀█░▌ ▐░█▀▀▀▀▀▀▀▀▀  ▐░█▀▀▀▀▀▀▀█░▌\n"
+		L"                                  ▐░▌           ▐░▌       ▐░▌ ▐░▌           ▐░▌       ▐░▌\n"
+		L"                                  ▐░▌ ▄▄▄▄▄▄▄▄  ▐░▌       ▐░▌ ▐░▌ ▄▄▄▄▄▄▄▄  ▐░▌       ▐░▌\n"
+		L"                                  ▐░▌▐░░░░░░░░▌ ▐░▌       ▐░▌ ▐░▌▐░░░░░░░░▌ ▐░▌       ▐░▌\n"
+		L"                                  ▐░▌ ▀▀▀▀▀▀█░▌ ▐░▌       ▐░▌ ▐░▌ ▀▀▀▀▀▀█░▌ ▐░▌       ▐░▌\n"
+		L"                                  ▐░▌       ▐░▌ ▐░▌       ▐░▌ ▐░▌       ▐░▌ ▐░▌       ▐░▌\n"
+		L"                                  ▐░█▄▄▄▄▄▄▄█░▌ ▐░█▄▄▄▄▄▄▄█░▌ ▐░█▄▄▄▄▄▄▄█░▌ ▐░█▄▄▄▄▄▄▄█░▌\n"
+		L"                                  ▐░░░░░░░░░░░▌ ▐░░░░░░░░░░░▌ ▐░░░░░░░░░░░▌ ▐░░░░░░░░░░░▌\n"
+		L"                                   ▀▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ \n"
+		L"                                                                                      \n");
+	_setmode(_fileno(stdout), _O_TEXT);
+	cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+}
+
 
 GoGo::~GoGo()
 {

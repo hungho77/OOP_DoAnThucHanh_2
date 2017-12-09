@@ -1,5 +1,5 @@
 #include "Car.h"
-
+#include<iomanip>
 
 
 Car::Car()
@@ -54,9 +54,9 @@ void Car::input(string strNumberPlate, string strDriveName, string strBrand, int
 
 void Car::output(ostream & os)
 {
-	os << "Car" << endl;
+	os << setw(20) << "" << right << setw(52) << left << "Type of vehicle: " << "Car" << endl;
 	Vehicle::output(os);
-	os << this->m_nSeat << endl;
+	os << setw(20) << "" << right << setw(52) << left << "Number of seats: " << this->m_nSeat << endl;
 }
 
 

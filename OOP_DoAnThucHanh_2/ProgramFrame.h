@@ -15,6 +15,7 @@ protected:
 public:
 	ProgramFrame();
 	void Run(istream &is, ostream &os);
+	virtual void display(ostream &os) = 0;
 	virtual void InputFile(istream &is) = 0;
 	~ProgramFrame();
 };

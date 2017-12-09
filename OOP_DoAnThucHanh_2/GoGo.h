@@ -40,6 +40,7 @@ class GoGo:
 public:
 	GoGo();
 	virtual void InputFile(istream &is);
+	virtual void display(ostream &os);
 	~GoGo();
 };
 

@@ -1,5 +1,5 @@
 #include "ProgramFrame.h"
-
+#include<iomanip>
 
 
 void ProgramFrame::StartMessage(ostream & os)
@@ -9,7 +9,8 @@ void ProgramFrame::StartMessage(ostream & os)
 
 void ProgramFrame::ErrorMessage(ostream & os)
 {
-	os << "Input data error!" << endl;
+	os << endl << setw(52) << "" << "Input data error!" << endl;
+	system("pause");
 }
 
 bool ProgramFrame::AskToComtinue(istream & is, ostream & os)
@@ -26,7 +27,7 @@ ProgramFrame::ProgramFrame()
 
 void ProgramFrame::Run(istream & is, ostream & os)
 {
-	bool ToContinue;
+	bool ToContinue = true;
 	do 
 	{
 		StartMessage(os);

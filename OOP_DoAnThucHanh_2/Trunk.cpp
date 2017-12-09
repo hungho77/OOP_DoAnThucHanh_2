@@ -1,5 +1,5 @@
 #include "Trunk.h"
-
+#include<iomanip>
 
 
 Trunk::Trunk()
@@ -53,13 +53,13 @@ void Trunk::input(string strNumberPlate, string strDriveName, string strBrand, i
 
 void Trunk::output(ostream & os)
 {
-	os << "Trunk" << endl;
+	os << setw(20) << "" << right << setw(52) << left << "Type of vehicle: " << "Trunk" << endl;
 	Vehicle::output(os);
 	if (this->m_nVehicleLoad == 750)
-		os << this->m_nVehicleLoad << "kg" << endl;
+		os << setw(20) << "" << right << setw(52) << left << "Load: " << this->m_nVehicleLoad << "kg" << endl;
 	else
 	{
-		os << this->m_nVehicleLoad / 1000.0 << "ton" << endl;
+		os << setw(20) << "" << right << setw(52) << left << "Load: " << this->m_nVehicleLoad / 1000.0 << "ton" << endl;
 	}
 }
 

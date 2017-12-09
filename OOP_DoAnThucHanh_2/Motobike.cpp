@@ -1,5 +1,5 @@
 #include "Motobike.h"
-
+#include<iomanip>
 
 
 Motobike::Motobike()
@@ -21,7 +21,7 @@ void Motobike::input(string strNumberPlate, string strDriveName, string strBrand
 
 void Motobike::output(ostream & os)
 {
-	os << "Motobike" << endl;
+	os << setw(20) << "" << right << setw(52) << left << "Type of vehicle: " << "Motobike" << endl;
 	Vehicle::output(os);
 }
 
