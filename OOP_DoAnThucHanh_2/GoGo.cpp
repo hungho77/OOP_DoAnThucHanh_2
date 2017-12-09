@@ -58,6 +58,8 @@ void GoGo::Input(istream & is)
 	is >> this->m_Finish;
 	cout << "Enter type of vehicle (1.motobike/2.car/3.trunk): ";
 	is >> this->m_nTof;
+	this->m_nSeat = 0;
+	this->m_nLoad = 0;
 	switch (this->m_nTof)
 	{
 	case motobike:
@@ -100,7 +102,7 @@ void GoGo::Output(ostream & os)
 void GoGo::Processing()
 {
 	vector<int> index;
-	for (int i = 0; i < this->m_pFlt.getN(m_nTof); i++)
+	for (int i = 0; i < this->m_pFlt.getN(this->m_nTof); i++)
 	{
 		if (this->m_pFlt.getElement(this->m_nTof - 1, i)->getSTT() == leisured
 			&& this->m_pFlt.getElement(this->m_nTof - 1, i)->get_nSeat() == chooseSeat()
@@ -133,6 +135,7 @@ void GoGo::Processing()
 	x.i = this->m_nTof - 1;
 	x.j = this->m_index;
 	this->m_update.push(x);
+	index.empty();
 }
 
 void GoGo::update()
